@@ -18,7 +18,7 @@ class W2VEmbReader:
         self.embeddings = {}
         emb_matrix = []
        
-        model = gensim.models.Word2Vec.load(emb_path)
+        model = gensim.models.keyedvectors.KeyedVectors.load(emb_path)
         self.emb_dim = emb_dim
         for word in model.vocab:
             self.embeddings[word] = list(model[word])
